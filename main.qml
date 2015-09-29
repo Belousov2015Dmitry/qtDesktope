@@ -211,7 +211,7 @@ import QtQuick 1.0
                     y: 14
                     width: 40
                     height: 37
-                    source: "C:/Users/M-39/Desktop/project/printer-icon.png"
+                    source: "printer-icon.png"
                 }
             }
         }
