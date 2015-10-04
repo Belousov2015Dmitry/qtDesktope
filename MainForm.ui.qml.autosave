@@ -293,7 +293,7 @@ Rectangle {
                 width: 59
                 height: 26
                 color: "#1874cd"
-                text: qsTr("0 Items")
+                text: qsTr("Выбрано: 0")
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 10
                 font.underline: false
