@@ -4,5 +4,7 @@
         <file>MainForm.ui.qml</file>
         <file>Switcher.qml</file>
         <file>AddButton.qml</file>
+        <file>View.qml</file>
+        <file>ViewForm.ui.qml</file>
     </qresource>
 </RCC>

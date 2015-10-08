@@ -234,47 +234,12 @@ Rectangle {
                     id: printRectangle
                     width: 65
                     height: 35
+                    color: "#1874cd"
                     radius: 2
                     anchors.bottom: parent.bottom
                     anchors.bottomMargin: 0
                     anchors.right: parent.right
                     anchors.rightMargin: 0
-                    gradient: Gradient {
-                        GradientStop {
-                            position: 0
-                            color: "#ffffff"
-                        }
-
-                        GradientStop {
-                            position: 0.010
-                            color: "#848181"
-                        }
-
-                        GradientStop {
-                            position: 0.130
-                            color: "#3e3939"
-                        }
-
-                        GradientStop {
-                            position: 0.140
-                            color: "#313131"
-                        }
-
-                        GradientStop {
-                            position: 0.300
-                            color: "#312c2c"
-                        }
-
-                        GradientStop {
-                            position: 0.560
-                            color: "#1a1818"
-                        }
-
-                        GradientStop {
-                            position: 1
-                            color: "#000000"
-                        }
-                    }
 
                     Image {
                         id: image1
