@@ -76,7 +76,7 @@ Rectangle {
 
     Rectangle {
         id: rectangleSelector
-        x: selectedId == id_SUBJECTS ? 34 : selectedId == id_TOPICS ? 146 : 256;
+        x: selectedId == id_SUBJECTS ? 34 : selectedId == id_TOPICS ? 143 : 252;
         y: -13
         width: 50
         height: 52

@@ -5,7 +5,11 @@ QT += qml quick
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    datamanager.cpp
+    MainForm.cpp \
+    FormsManager.cpp \
+    RedactorForm.cpp \
+    PrinterForm.cpp \
+    DataManager.cpp
 
 RESOURCES += qml.qrc
 
@@ -16,5 +20,9 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    datamanager.h
+    MainForm.h \
+    FormsManager.h \
+    RedactorForm.h \
+    PrinterForm.h \
+    DataManager.h
 

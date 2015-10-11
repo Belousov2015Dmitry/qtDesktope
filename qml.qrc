@@ -4,6 +4,11 @@
         <file>MainForm.ui.qml</file>
         <file>Switcher.qml</file>
         <file>AddButton.qml</file>
+        <file>ItemPrototype.qml</file>
+        <file>redactor.qml</file>
+        <file>RedactorForm.ui.qml</file>
+        <file>printer.qml</file>
+        <file>PrinterForm.ui.qml</file>
         <file>View.qml</file>
         <file>ViewForm.ui.qml</file>
     </qresource>

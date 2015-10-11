@@ -14,6 +14,8 @@ Rectangle {
     anchors.bottomMargin: 917
     anchors.rightMargin: 250
 
+    property bool isActive: false
+
     Text {
         id: rectangle3_label
         x: 50
@@ -33,16 +35,19 @@ Rectangle {
         anchors.centerIn: parent
         RotationAnimator on rotation {
             id: rotationAnimation
-            from: 0
-            to: 180
-            duration: 300
+            from: isActive ? 45 : 0
+            to: isActive ? -0 : 45
+            duration: 100
         }
     }
 
     MouseArea {
         id: mouseAreaAdd
         anchors.fill: parent
-        onClicked: rotationAnimation.start();
+        onClicked: {
+            rotationAnimation.start();
+            isActive = !isActive;
+        }
     }
 
 

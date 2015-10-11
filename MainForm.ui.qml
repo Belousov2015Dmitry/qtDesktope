@@ -11,11 +11,6 @@ Rectangle {
     smooth: true
     border.color: "#090808"
 
-
-
-
-
-
     Column {
         id: columnMain
         anchors.left: parent.left
@@ -133,6 +128,7 @@ Rectangle {
                     anchors.bottomMargin: 0
                     anchors.top: parent.top
                     anchors.topMargin: 0
+                    isActive: false
                 }
             }
         }
@@ -217,40 +213,8 @@ Rectangle {
             anchors.rightMargin: 0
             spacing: 0
             anchors.top: parent.top
-            anchors.topMargin: 10
+            anchors.topMargin: 0
             layoutDirection: Qt.LeftToRight
-
-            Flow {
-                id: flowPrintBtn
-                width: 65
-                height: 35
-                spacing: 0
-                anchors.leftMargin: 20
-                anchors.topMargin: 7
-                anchors.top: parent.top
-                anchors.left: flowAddBtn.right
-
-                Rectangle {
-                    id: printRectangle
-                    width: 65
-                    height: 35
-                    color: "#1874cd"
-                    radius: 2
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: 0
-                    anchors.right: parent.right
-                    anchors.rightMargin: 0
-
-                    Image {
-                        id: image1
-                        x: 13
-                        y: 3
-                        width: 40
-                        height: 30
-                        source: "printer-icon.png"
-                    }
-                }
-            }
 
             Text {
                 id: text4
@@ -258,7 +222,7 @@ Rectangle {
                 width: 59
                 height: 26
                 color: "#1874cd"
-                text: qsTr("0 Items")
+                text: qsTr("Выбрано: 0")
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: 10
                 font.underline: false
@@ -272,6 +236,24 @@ Rectangle {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 font.pixelSize: 15
+            }
+
+            Image {
+                id: imagePrint
+                width: 40
+                height: 40
+                anchors.left: parent.left
+                anchors.leftMargin: 8
+                anchors.verticalCenterOffset: 6
+                anchors.verticalCenter: parent.verticalCenter
+                source: "printButton.png"
+
+                MouseArea {
+                    id: mouseAreaPrint
+                    anchors.fill: parent
+                    // @disable-check M222
+                    onClicked: mainClass.printButtonSlot();
+                }
             }
         }
     }
@@ -308,5 +290,15 @@ Rectangle {
         anchors.bottomMargin: 5
         anchors.rightMargin: 5
         anchors.topMargin: 65
+    }
+
+    TextEdit {
+        id: textEdit1
+        x: -614
+        y: -136
+        width: 80
+        height: 20
+        text: qsTr("Text Edit")
+        font.pixelSize: 12
     }
 }
