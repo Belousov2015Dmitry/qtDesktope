@@ -1,0 +1,5 @@
+#ifndef DIALOGADDING
+#define DIALOGADDING
+
+#endif // DIALOGADDING
+
