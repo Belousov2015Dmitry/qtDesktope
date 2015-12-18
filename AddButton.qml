@@ -16,6 +16,22 @@ Rectangle {
 
     property bool isActive: false
 
+    signal signalRatate()
+
+    MouseArea {
+        id: mouseAreaAdd
+        anchors.fill: parent
+
+        onClicked: {
+            rotationAnimation.start();
+            isActive = !isActive;
+        }
+    }
+
+    Component.onCompleted: {
+        mouseAreaAdd.clicked.connect(signalRatate)
+    }
+
     Text {
         id: rectangle3_label
         x: 50
@@ -40,15 +56,4 @@ Rectangle {
             duration: 100
         }
     }
-
-    MouseArea {
-        id: mouseAreaAdd
-        anchors.fill: parent
-        onClicked: {
-            rotationAnimation.start();
-            isActive = !isActive;
-        }
-    }
-
-
 }

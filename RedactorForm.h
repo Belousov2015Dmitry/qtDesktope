@@ -13,6 +13,10 @@ public:
 signals:
 
 public slots:
+    void BlackWhiteButtonSlot();
+    void RotationButtonSlot();
+    void CropButtonSlot();
+    void SaveButtonSlot();
 
 protected:
     QObject *qmlObject;

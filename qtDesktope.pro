@@ -2,6 +2,7 @@ TEMPLATE = app
 
 QT += sql
 QT += qml quick
+#QT += declarative
 CONFIG += c++11
 
 SOURCES += main.cpp \
@@ -9,7 +10,8 @@ SOURCES += main.cpp \
     FormsManager.cpp \
     RedactorForm.cpp \
     PrinterForm.cpp \
-    DataManager.cpp
+    DataManager.cpp \
+    DialogAdding.cpp
 
 RESOURCES += qml.qrc
 
@@ -24,5 +26,6 @@ HEADERS += \
     FormsManager.h \
     RedactorForm.h \
     PrinterForm.h \
-    DataManager.h
+    DataManager.h \
+    DialogAdding.h
 

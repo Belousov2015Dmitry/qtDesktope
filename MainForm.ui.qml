@@ -11,8 +11,11 @@ Rectangle {
     smooth: true
     border.color: "#090808"
 
+    property bool locked: false
+
     Column {
         id: columnMain
+        z: 1
         anchors.left: parent.left
         anchors.leftMargin: 10
         anchors.top: parent.top
@@ -85,6 +88,7 @@ Rectangle {
         Row {
             id: rowBtn
             height: 60
+            z: 100
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: parent.left
@@ -112,16 +116,18 @@ Rectangle {
                 id: flowAddBtn
                 width: 40
                 height: 40
+                z: 100
                 anchors.right: parent.right
                 anchors.rightMargin: 5
                 anchors.top: parent.top
                 anchors.topMargin: 12
 
                 AddButton {
-                    id: addButton1
+                    id: addButton
                     x: 0
                     y: 0
                     radius: 20
+                    z: 100
                     anchors.rightMargin: 0
                     anchors.left: parent.left
                     anchors.leftMargin: 0
@@ -129,6 +135,22 @@ Rectangle {
                     anchors.top: parent.top
                     anchors.topMargin: 0
                     isActive: false
+
+                    // @disable-check M223
+                    onSignalRatate: {
+                        // @disable-check M222
+                        mainClass.addButtonSlot(100500);
+
+//                        // @disable-check M223
+//                        if(addButton.isActive) {
+//                            dialogCreator.z = 100;
+
+//                        }
+//                        // @disable-check M223
+//                        else {
+//                            dialogCreator.z = -100;
+//                        }
+                    }
                 }
             }
         }
@@ -138,6 +160,7 @@ Rectangle {
         id: columnBasket
         x: 506
         width: 364
+        z: 1
         anchors.top: parent.top
         anchors.topMargin: 10
         anchors.bottom: parent.bottom
@@ -242,17 +265,40 @@ Rectangle {
                 id: imagePrint
                 width: 40
                 height: 40
+                source: "images/printButton.png"
                 anchors.left: parent.left
                 anchors.leftMargin: 8
                 anchors.verticalCenterOffset: 6
                 anchors.verticalCenter: parent.verticalCenter
-                source: "printButton.png"
+                //source: "/Images/images/printButton.png"
+
 
                 MouseArea {
                     id: mouseAreaPrint
+                    hoverEnabled: true
                     anchors.fill: parent
                     // @disable-check M222
                     onClicked: mainClass.printButtonSlot();
+                }
+            }
+
+            Image {
+                id: imageRed
+                width: 40
+                height: 40
+                anchors.left: parent.left
+                anchors.leftMargin: 56
+                anchors.verticalCenterOffset: 6
+                anchors.verticalCenter: parent.verticalCenter
+                asynchronous: true
+                source: "images/redactButton.png"
+
+                MouseArea {
+                    id: mouseAreaRedact
+                    hoverEnabled: true
+                    anchors.fill: parent
+                    // @disable-check M222
+                    onClicked: mainClass.redactButtonSlot();
                 }
             }
         }
@@ -292,13 +338,15 @@ Rectangle {
         anchors.topMargin: 65
     }
 
-    TextEdit {
-        id: textEdit1
-        x: -614
-        y: -136
-        width: 80
-        height: 20
-        text: qsTr("Text Edit")
-        font.pixelSize: 12
+    DialogAdding {
+        id: dialogCreator
+        x: 200
+        y: 100
+        anchors.bottomMargin: 100
+        anchors.topMargin: 100
+        anchors.rightMargin: 200
+        anchors.leftMargin: 200
+        anchors.fill: parent
+        z: 100
     }
 }

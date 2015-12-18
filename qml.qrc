@@ -11,5 +11,11 @@
         <file>PrinterForm.ui.qml</file>
         <file>View.qml</file>
         <file>ViewForm.ui.qml</file>
+        <file>DialogAdding.qml</file>
+        <file>EditableComboBox.qml</file>
+        <file>BlackWhiteButton.qml</file>
+        <file>RotationButton.qml</file>
+        <file>CropButton.qml</file>
+        <file>SaveButton.qml</file>
     </qresource>
 </RCC>

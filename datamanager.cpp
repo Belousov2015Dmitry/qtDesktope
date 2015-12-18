@@ -123,7 +123,7 @@ char DataManager::addTopic(const QString &article, const QString &title, const Q
 
 char DataManager::addCrib(const QString &topic, const QString &title, const QString &tag, const QString &comment, const QString &pathToImg) {
 
-    if(this->getId(this->TABLE_TOPICS, topic) != this->ERROR)
+    if(this->getId(this->TABLE_CRIBS, title) != this->ERROR)
         return this->CODE_IS_CONTAINED;
 
     int id_t = this->getId(this->TABLE_TOPICS, topic);
